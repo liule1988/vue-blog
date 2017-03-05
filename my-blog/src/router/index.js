@@ -30,8 +30,8 @@ export default new Router({
           component: Movie
 
         },
-
       ]
     },
+
   ]
 })
