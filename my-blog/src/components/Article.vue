@@ -32,7 +32,7 @@
         $.ajax({
           // url: "https://api.douban.com/v2/movie/in_theaters",
            data:{
-                access_token :'de14b3e7b3f33bd17928bb11f44aa17d2c4b8c60',
+//                access_token :'de14b3e7b3f33bd17928bb11f44aa17d2c4b8c60',
            },
           url: "https://api.github.com/repos/liule1988/liule.github.io/issues",
           type: 'GET',
