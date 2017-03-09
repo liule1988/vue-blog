@@ -1,10 +1,10 @@
 <template>
   <div>
     <div v-for="item in articles" style="margin: 0 auto">
-        <router-link :to="{name:'aa',params:{id:item.number}}" :item="item">
+        <!--<router-link :to="{name:'aa',params:{id:item.number}}" :item="item">-->
           <item-article :item="item"></item-article>
 
-        </router-link>
+        <!--</router-link>-->
     </div>
   </div>
 

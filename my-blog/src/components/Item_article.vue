@@ -15,7 +15,10 @@
       ...
     </div>
     <div style="text-align: center">
+      <router-link :to="{name:'aa',params:{id:item.number}}">
+
       <el-button>查看全文</el-button>
+      </router-link>
     </div>
   </div>
 </template>
