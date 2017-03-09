@@ -31,7 +31,7 @@
       'movie-item': movie_item,
       'movie-detail':movie_detail
     },
-    created: function () {
+    mounted: function () {
       var that = this;
       $.ajax({
         url: "https://api.douban.com/v2/movie/in_theaters",
