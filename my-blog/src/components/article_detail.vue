@@ -25,7 +25,7 @@
         $.ajax({
           // url: "https://api.douban.com/v2/movie/in_theaters",
           data:{
-//            access_token :'de14b3e7b3f33bd17928bb11f44aa17d2c4b8c60',
+            access_token :'1af7d431e31c3bac53d79a9385f5f20ff67788b7',
 //            id:that.$route.params.id
           },
           url: "https://api.github.com/repos/liule1988/liule.github.io/issues/"+that.$route.params.id,
