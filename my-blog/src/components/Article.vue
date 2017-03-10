@@ -37,11 +37,11 @@
           url: "https://api.github.com/repos/liule1988/liule.github.io/issues",
           type: 'GET',
           dataType: 'JSON',//here
-          beforeSend: function(xhr) {
-
-            xhr.setRequestHeader("Accept", "application/vnd.github.v3.html");
-
-          },
+//          beforeSend: function(xhr) {
+//
+//            xhr.setRequestHeader("Accept", "application/vnd.github.v3.html");
+//
+//          },
           success: function (data) {
              alert(JSON.stringify(data))
             that.articles=data;
