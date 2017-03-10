@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="item in articles" style="margin: 0 auto">
+    <div v-for="item in articles">
         <!--<router-link :to="{name:'aa',params:{id:item.number}}" :item="item">-->
           <item-article :item="item"></item-article>
 
@@ -46,6 +46,9 @@
              console.log(JSON.stringify(data))
             that.articles=data;
 //            loadingInstance.close();
+          },
+          error:function (e) {
+            alert.log(e.responseText);
           }
         });
       }
