@@ -43,12 +43,12 @@
 
           },
           success: function (data) {
-             console.log(JSON.stringify(data))
+             alert(JSON.stringify(data))
             that.articles=data;
 //            loadingInstance.close();
           },
           error:function (e) {
-            alert.log(e.responseText);
+            alert(e.responseText);
           }
         });
       }
