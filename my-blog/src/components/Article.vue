@@ -2,8 +2,8 @@
   <div>
     <div v-for="item in articles">
         <!--<router-link :to="{name:'aa',params:{id:item.number}}" :item="item">-->
-          <item-article :item="item"></item-article>
-
+          <!--<item-article :item="item"></item-article>-->
+        <div>{{item.title}}</div>
         <!--</router-link>-->
     </div>
   </div>
