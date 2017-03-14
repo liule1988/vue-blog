@@ -14,6 +14,7 @@
 </style>
 <script>
   import $ from 'jquery'
+  import axios from 'axios'
   import movie_item from './movie_item.vue'
   import movie_detail from './movie_detail.vue'
   export default{
@@ -33,14 +34,25 @@
     },
     mounted: function () {
       var that = this;
-      $.ajax({
-        url: "https://api.douban.com/v2/movie/in_theaters",
-        type: 'GET',
-        dataType: 'JSONP',//here
-        success: function (data) {
-          that.movies_datas = data.subjects;
-        }
-      });
+      axios.get('https://api.douban.com/v2/movie/in_theaters',{
+        responseType: 'jsonp',
+      })
+        .then(function (response) {
+          console.log(response);
+          that.movies_datas = response.data.subjects;
+
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+//      $.ajax({
+//        url: "https://api.douban.com/v2/movie/in_theaters",
+//        type: 'GET',
+//        dataType: 'JSONP',//here
+//        success: function (data) {
+//          that.movies_datas = data.subjects;
+//        }
+//      });
     },
     beforeUpdate: function () {
       console.log(this.movieId.length)
