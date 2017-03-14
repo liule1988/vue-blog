@@ -31,12 +31,12 @@ import axios from 'axios'
           headers: {'Accept': 'application/vnd.github.v3.html'}
         })
           .then(function (response) {
-            console.log(response);
+            alert(response.data);
             that.articles=response.data;
 
           })
           .catch(function (error) {
-            console.log(error);
+            alert(error);
           });
 
 //        let loadingInstance = Loading.service({ fullscreen: true });
