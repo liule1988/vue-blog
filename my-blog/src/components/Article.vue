@@ -1,10 +1,9 @@
 <template>
   <div>
     <div v-for="item in articles">
-        <!--<router-link :to="{name:'aa',params:{id:item.number}}" :item="item">-->
-          <!--<item-article :item="item"></item-article>-->
-        <div>{{item.title}}</div>
-        <!--</router-link>-->
+        <router-link :to="{name:'aa',params:{id:item.number}}" :item="item">
+          <item-article :item="item"></item-article>
+        </router-link>
     </div>
   </div>
 
@@ -25,10 +24,11 @@ import axios from 'axios'
             'item-article':item_article
       },
 
-      created:function () {
+      mounted:function () {
         var that = this;
         axios.get('https://api.github.com/repos/liule1988/liule.github.io/issues',{
-          headers: {'Accept': 'application/vnd.github.v3.html'}
+          headers: {'Accept': 'application/vnd.github.v3.html',
+            'Content-Type': 'application/x-www-form-urlencoded'}
         })
           .then(function (response) {
             alert(response.data);
