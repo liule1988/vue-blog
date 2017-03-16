@@ -1,5 +1,6 @@
 <template>
   <div>
+    <button @click="http_get">haah</button>
     <div v-for="item in articles">
         <router-link :to="{name:'aa',params:{id:item.number}}" :item="item">
           <item-article :item="item"></item-article>
@@ -24,23 +25,25 @@ import axios from 'axios'
             'item-article':item_article
       },
 
-      created:function () {
+      methods:{
+          http_get:function () {
         var that = this;
-        axios.get('https://api.github.com/repos/liule1988/liule.github.io/issues',{
-          headers: {'Accept': 'application/vnd.github.v3.html',
+        axios.get('https://api.github.com/repos/liule1988/liule.github.io/issues', {
+          headers: {
+            'Accept': 'application/vnd.github.v3.html',
             'Content-type': 'application/json'
           },
           async: true,
         })
           .then(function (response) {
             alert(response.data);
-            that.articles=response.data;
+            that.articles = response.data;
 
           })
           .catch(function (error) {
             alert(error);
           });
-
+      }
 //        let loadingInstance = Loading.service({ fullscreen: true });
 
 //        $.ajax({
