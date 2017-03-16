@@ -29,7 +29,8 @@ import axios from 'axios'
         axios.get('https://api.github.com/repos/liule1988/liule.github.io/issues',{
           headers: {'Accept': 'application/vnd.github.v3.html',
             'Content-type': 'application/json'
-          }
+          },
+          async: true,
         })
           .then(function (response) {
             alert(response.data);
