@@ -24,11 +24,12 @@ import axios from 'axios'
             'item-article':item_article
       },
 
-      mounted:function () {
+      created:function () {
         var that = this;
         axios.get('https://api.github.com/repos/liule1988/liule.github.io/issues',{
           headers: {'Accept': 'application/vnd.github.v3.html',
-            'Content-Type': 'application/x-www-form-urlencoded'}
+            'Content-type': 'application/json'
+          }
         })
           .then(function (response) {
             alert(response.data);

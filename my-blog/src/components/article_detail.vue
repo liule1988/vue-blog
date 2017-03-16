@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="md">
+  <div v-html="article.body_html">
 
-{{this.article.body}}
+  </div>
   </div>
 </template>
 
@@ -28,6 +29,11 @@
             access_token :'1af7d431e31c3bac53d79a9385f5f20ff67788b7',
 //            id:that.$route.params.id
           },
+          beforeSend: function(xhr) {
+
+            xhr.setRequestHeader("Accept", "application/vnd.github.v3.html");
+
+          },
           url: "https://api.github.com/repos/liule1988/liule.github.io/issues/"+that.$route.params.id,
           type: 'GET',
           dataType: 'JSON',//here
@@ -43,5 +49,13 @@
 </script>
 
 <style>
+  .md{
+    margin: 0 auto;
+    max-width: 720px;
+    padding: 20px;
+  }
+  .md p{
+
+  }
 
 </style>

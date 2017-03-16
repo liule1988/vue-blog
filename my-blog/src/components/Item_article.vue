@@ -3,7 +3,7 @@
     <h3>{{item.title}}</h3>
     <div class="type_wrapper">
       <div class="labels">
-        <el-button type="primary" size="small" v-for="label in item.labels">{{label.name}}</el-button>
+        <el-button type="primary" size="small" v-for="label in item.labels" :key="label.id">{{label.name}}</el-button>
       </div>
       <div>
         <span class="time_article">{{item.created_at.substring(0,10)}}</span>
