@@ -2,9 +2,9 @@
   <div>
     <button @click="http_get">haah</button>
     <div v-for="item in articles">
-        <router-link :to="{name:'aa',params:{id:item.number}}" :item="item">
-          <item-article :item="item"></item-article>
-        </router-link>
+      <router-link :to="{name:'aa',params:{id:item.number}}" :item="item">
+        <item-article :item="item"></item-article>
+      </router-link>
     </div>
   </div>
 
@@ -13,20 +13,20 @@
 <script>
   import $ from 'jquery';
   import item_article from './Item_article.vue';
-  import { Loading } from 'element-ui';
-import axios from 'axios'
+  import {Loading} from 'element-ui';
+  import axios from 'axios'
   export default{
-        data(){
-            return {
-                articles:null,
-            }
-        },
-      components:{
-            'item-article':item_article
-      },
+    data(){
+      return {
+        articles: null,
+      }
+    },
+    components: {
+      'item-article': item_article
+    },
 
-      methods:{
-          http_get:function () {
+    methods: {
+      http_get: function () {
         var that = this;
         axios.get('https://api.github.com/repos/liule1988/liule.github.io/issues', {
           headers: {
@@ -68,9 +68,9 @@ import axios from 'axios'
 //            alert(e.responseText);
 //          }
 //        });
-      }
-
     }
+
+  }
 </script>
 
 <style>
